@@ -78,4 +78,23 @@ public class Movement : MonoBehaviour
         // another recipe
         this._characterController.Move(this._moveDirection * Time.deltaTime);
     }
+
+    // //////////////////
+    // Trigger objects allow items to pass through them and rater than set off onCollision, they 
+    //   set off onTrigger.  One of the colliders involved must also have a ridged body. 
+    //  Note the param is the Collider, the collision since no collision occured
+    // //////////////////
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log($"Object {other.name} entered trigger {this.name}");
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log($"Object {other.name} exited trigger {this.name}");
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        Debug.Log($"Object {other.name} remained in trigger {this.name}");
+    }
+    
 }
