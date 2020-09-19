@@ -27,7 +27,6 @@ public class Movement : MonoBehaviour
     
     void FixedUpdate()
     {   
-        Debug.Log("X");
         // this vector describes the characters desired local-space mvmnt
         // if we are on the ground, this will immediately become our movmnt
         // but if in air, we'll interpolate between our current mvmnt and this vector
